@@ -2,7 +2,7 @@
 
 This project provides an exploratory data analysis and visualization of a dataset containing salary information for data-related roles. The goal is to uncover patterns based on experience level, company size, location, and remote work ratios.
 
-## 📁 Dataset
+## Dataset
 
 The dataset used in this analysis is `salaries.csv`, which includes fields such as:
 
@@ -16,9 +16,9 @@ The dataset used in this analysis is `salaries.csv`, which includes fields such 
 - `company_size`: Size of the company (S, M, L).
 - `salary_in_usd`: Salary in USD.
 
-## 📦 Libraries Used
+## Libraries Used
 
-```r
+
 install.packages("tidyverse")
 install.packages("dplyr")
 install.packages("ggplot2")
@@ -27,11 +27,12 @@ install.packages("corrplot")
 install.packages("randomForest")
 install.packages("plotly")
 
-Visualizations & Analysis
-Data Cleaning
+## Visualizations & Analysis
+
+### Data Cleaning
 Missing values are removed using na.omit().
 
-Salary Statistics
+### Salary Statistics
 Average salary is calculated and visualized by:
 
 Experience Level
