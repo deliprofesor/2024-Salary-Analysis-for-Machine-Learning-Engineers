@@ -1,5 +1,8 @@
 # 2024-Salary-Analysis-for-Machine-Learning-Engineers
 
+![image](https://github.com/user-attachments/assets/d1572c4f-6849-4e31-8472-d0156ef2e9d9)
+
+
 This project provides an exploratory data analysis and visualization of a dataset containing salary information for data-related roles. The goal is to uncover patterns based on experience level, company size, location, and remote work ratios.
 
 ## Dataset
@@ -29,51 +32,12 @@ install.packages("plotly")
 
 ## Visualizations & Analysis
 
-### Data Cleaning
-Missing values are removed using na.omit().
+- Data Preparation: The data was loaded, missing values were identified and removed.
 
-### Salary Statistics
-Average salary is calculated and visualized by:
+- Summary Statistics: The basic characteristics of the data were summarized, and salary distributions along with other variables were analyzed.
 
-Experience Level
+- Group-Based Analysis: Average salary by experience level, company size, and country was calculated.
 
-Company Size
+- Visualization: A scatter plot was created to show the relationship between salary and remote working ratio. Bar charts were prepared to display salary distribution by country and yearly salary trends. A correlation heatmap and box plots were used to visualize relationships between variables.
 
-Job Title
-
-Employee Residence
-
-Work Year
-
-Correlation Analysis
-Numeric encoding for company_size allows correlation with remote_ratio and salary_in_usd.
-
-A correlation matrix is visualized using corrplot.
-
-Regression & Machine Learning
-A linear model (lm) is built to predict salary based on experience and remote ratio.
-
-A Random Forest model is used to determine variable importance.
-
-Key Plots
-Salary vs. Remote Ratio: Scatter plot with experience level coloring.
-
-Salary Distribution by Experience: Box plot grouped by experience level.
-
-Salary by Country: Horizontal bar chart sorted by average salary.
-
-Salary by Job Title: Ranked bar chart of average salary per job.
-
-Average Salary by Year: Enhanced line chart with labels and styling.
-
-Interactive Plot: Remote ratio vs. salary visualized with ggplotly().
-
-Highlight Plot
-
-ggplot(avg_salary_by_year, aes(x = year, y = mean_salary, group = 1)) +
-  geom_line(color = "#0073C2FF", size = 1.5) +
-  geom_point(color = "#EFC000FF", size = 4) +
-  geom_text(aes(label = round(mean_salary, 0)), vjust = -1, size = 3.5) +
-  labs(title = "Yıllara Göre Ortalama Maaş Değişimi",
-       x = "Yıl", y = "Ortalama Maaş (USD)") +
-  theme_minimal(base_size = 14)
+- Machine Learning Models: A linear regression model was built for salary prediction, and its accuracy was evaluated. A Random Forest model was used to determine the importance of features in salary prediction.
