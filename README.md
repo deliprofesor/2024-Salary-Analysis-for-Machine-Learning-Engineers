@@ -2,42 +2,79 @@
 
 ![image](https://github.com/user-attachments/assets/d1572c4f-6849-4e31-8472-d0156ef2e9d9)
 
+##  Project Overview
+This project provides an **interactive Shiny Dashboard** for exploring salary distributions of professionals working in **Machine Learning and Data Science** fields.  
+It allows filtering by experience level, job title, company size, and country to better understand **salary patterns in 2024**.
 
-This project provides an exploratory data analysis and visualization of a dataset containing salary information for data-related roles. The goal is to uncover patterns based on experience level, company size, location, and remote work ratios.
+The dashboard offers a user-friendly and dynamic interface built with `shinydashboard`, enabling deep data exploration and interactive visualizations.
 
-## Dataset
+---
 
-The dataset used in this analysis is `salaries.csv`, which includes fields such as:
+##  Features
+- **Dynamic Filtering**
+  - Filter salaries by:
+    - Experience Level (`EN`, `MI`, `SE`, `EX`)
+    - Job Title
+    - Company Size (`S`, `M`, `L`)
+    - Employee Residence Country  
 
-- `work_year`: The year of the salary report.
-- `experience_level`: Experience level of the employee (e.g., EN, MI, SE, EX).
-- `employment_type`: Type of employment.
-- `job_title`: Title of the job.
-- `employee_residence`: Country of residence.
-- `remote_ratio`: Percentage of remote work (0 to 100).
-- `company_location`: Country of the company.
-- `company_size`: Size of the company (S, M, L).
-- `salary_in_usd`: Salary in USD.
+- **Interactive Visualizations**
+  - Plotly-powered box plots showing salary distribution by experience level  
+  - Smooth, modern UI/UX design with `shinydashboard`
 
-## Libraries Used
+- **Automatic Data Cleaning**
+  - Missing values are automatically removed (`na.omit()`)
+
+---
+
+##  Tech Stack
+| Category | Libraries |
+|-----------|------------|
+| Web App Framework | `shiny`, `shinydashboard` |
+| Data Manipulation | `tidyverse`, `dplyr` |
+| Visualization | `ggplot2`, `plotly` |
+
+---
+
+##  Dataset: `salaries.csv`
+This dataset contains salary information for data-related roles across multiple countries and company sizes.
+
+| Column | Description |
+|--------|--------------|
+| `work_year` | Year of the salary report |
+| `experience_level` | Experience level (`EN`, `MI`, `SE`, `EX`) |
+| `employment_type` | Type of employment (FT, PT, CT, FL) |
+| `job_title` | Job title |
+| `salary` | Salary in local currency |
+| `salary_currency` | Currency of the salary |
+| `salary_in_usd` | Salary converted to USD |
+| `employee_residence` | Country of residence |
+| `remote_ratio` | Percentage of remote work (0–100) |
+| `company_location` | Country of the company |
+| `company_size` | Size of the company (`S`, `M`, `L`) |
+
+---
+
+##  Previous EDA & ML Analysis
+Before building the dashboard, an **Exploratory Data Analysis (EDA)** was performed:
+- Summary statistics and data cleaning  
+- Average salary grouped by experience, country, and company size  
+- Visualization of salary vs remote ratio and country-based salary trends  
+- Correlation heatmap to explore variable relationships  
+
+**Machine Learning Models:**
+- Linear Regression model for salary prediction  
+- Random Forest model to identify key factors affecting salaries  
+
+---
+
+##  How to Run the App
+```r
+# Install dependencies
+install.packages(c("shiny", "shinydashboard", "tidyverse", "dplyr", "ggplot2", "plotly"))
+
+# Run the app
+library(shiny)
+runApp("app.R")
 
 
-install.packages("tidyverse")
-install.packages("dplyr")
-install.packages("ggplot2")
-install.packages("summarytools")
-install.packages("corrplot")
-install.packages("randomForest")
-install.packages("plotly")
-
-## Visualizations & Analysis
-
-- Data Preparation: The data was loaded, missing values were identified and removed.
-
-- Summary Statistics: The basic characteristics of the data were summarized, and salary distributions along with other variables were analyzed.
-
-- Group-Based Analysis: Average salary by experience level, company size, and country was calculated.
-
-- Visualization: A scatter plot was created to show the relationship between salary and remote working ratio. Bar charts were prepared to display salary distribution by country and yearly salary trends. A correlation heatmap and box plots were used to visualize relationships between variables.
-
-- Machine Learning Models: A linear regression model was built for salary prediction, and its accuracy was evaluated. A Random Forest model was used to determine the importance of features in salary prediction.
